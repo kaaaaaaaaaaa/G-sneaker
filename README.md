@@ -1,5 +1,6 @@
-# G-Sneaker
+# G-Sneaker Assignment
 
+Project follow correctly design from [https://golden-shoe-live-example.herokuapp.com/](https://golden-shoe-live-example.herokuapp.com/)
 [Deploy Heroku](https://golden-sneaker-oanhhtk.herokuapp.com/)
 
 In the project directory, you can run:
@@ -15,4 +16,4 @@ You may also see any lint errors in the console.
 ### `Live Demo`
 
 Deploy the application to heroku.
-[(https://golden-sneaker-oanhhtk.herokuapp.com/](https://golden-sneaker-oanhhtk.herokuapp.com/)
+[https://golden-sneaker-oanhhtk.herokuapp.com/](https://golden-sneaker-oanhhtk.herokuapp.com/)
