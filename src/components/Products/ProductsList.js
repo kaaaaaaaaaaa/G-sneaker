@@ -8,6 +8,8 @@ ProductsList.propTypes = {
 };
 
 function ProductsList({ initProductList, onAddToCart }) {
+  // if(!onAddToCart) return;
+
   return (
     <div className="products-list">
       {initProductList ? (

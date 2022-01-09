@@ -11,6 +11,11 @@ const btnToCart = `<button>ADD TO CART</button>`;
 
 function ProductsItem(props) {
   const { productItem, onAddToCart } = props;
+  if (!onAddToCart) return;
+
+  function handleAddToCart(item) {
+    onAddToCart(item);
+  }
 
   const conditionChecked = productItem.isAdded === true && productItem.qty > 0;
   return (
@@ -20,20 +25,19 @@ function ProductsItem(props) {
         style={{ background: productItem.color }}
       >
         <img src={productItem.image} alt="" />
-      </div>{" "}
-      <p className="product-item__name"> {productItem.name} </p>{" "}
-      <p className="product-item__description"> {productItem.description} </p>{" "}
+      </div>
+      <p className="product-item__name"> {productItem.name} </p>
+      <p className="product-item__description"> {productItem.description} </p>
       <div className="product-item__bottom">
-        <div className="price"> $ {productItem.price} </div>{" "}
+        <div className="price"> $ {productItem.price} </div>
         <div className="product-item__cover">
-          {" "}
           {productItem.qty === 0 && (
             <div
-              onClick={() => onAddToCart(productItem)}
+              onClick={() => handleAddToCart(productItem)}
               className=""
               dangerouslySetInnerHTML={{ __html: btnToCart }}
             />
-          )}{" "}
+          )}
           {conditionChecked && (
             <div
               className="icon-checked"

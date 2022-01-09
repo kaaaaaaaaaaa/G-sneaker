@@ -22,7 +22,9 @@ function CartList({ cartProductsList, onAddToCart, onRemove, onDelete }) {
             onDelete={onDelete}
           />
         ))}
-      {cartProductsList.length === 0 && <p> Your cart is empty </p>}
+      {cartProductsList.length === 0 && (
+        <p className="cart-list__empty"> Your cart is empty </p>
+      )}
     </div>
   );
 }

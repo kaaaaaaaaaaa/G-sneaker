@@ -11,13 +11,9 @@ function CartItem(props) {
   const cartItemRef = useRef();
 
   function handleDeleteProduct(cartItem) {
-    // let removed = false;
     if (onDelete) {
       cartItemRef.current.style.animation =
         "myAniRemove cubic-bezier(0.175, 0.885, 0.32, 1) 0.8s forwards";
-      // cartItemRef.current.style.animationFillMode = "forwards";
-      // console.log(cartItemRef.current.style);
-      // onDelete(cartItem);
 
       setTimeout(() => {
         onDelete(cartItem);
@@ -25,14 +21,13 @@ function CartItem(props) {
     }
   }
   function handleRemoveProduct(cartItem) {
-    // let removed = false;
     if (onRemoveFromCart && cartItem.qty === 1) {
       cartItemRef.current.style.animation =
         "myAniRemove cubic-bezier(0.175, 0.885, 0.32, 1) 0.6s forwards";
 
       setTimeout(() => {
         onRemoveFromCart(cartItem);
-      }, 500);
+      }, 400);
     } else {
       onRemoveFromCart(cartItem);
     }
