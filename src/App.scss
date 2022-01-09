@@ -28,18 +28,20 @@
             z-index: 0;
             overflow: hidden;
         }
-        // &::after {
-        //     content: "";
-        //     display: block;
-        //     position: absolute;
-        //     width: 100%;
-        //     height: 100%;
-        //     border-radius: 39%;
-        //     background-color: #f6c90e;
-        //     top: 62%;
-        //     z-index: -1;
-        //     transform: rotate3d(2, 1, -1, 45deg);
-        // }
+        &::after {
+            content: "";
+            display: block;
+            position: fixed;
+            width: 1201px;
+            height: 322px;
+            border-radius: 40%;
+            background-color: #f6c90e;
+            bottom: -203px;
+            left: 44%;
+            z-index: 0;
+            overflow: hidden;
+            transform: rotate( -16deg);
+        }
     }
     
     .cart {
