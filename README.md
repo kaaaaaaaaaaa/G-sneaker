@@ -16,4 +16,4 @@ You may also see any lint errors in the console.
 ### `Live Demo`
 
 Deploy the application to heroku.
-[https://golden-sneaker-oanhhtk.herokuapp.com/](https://golden-sneaker-oanhhtk.herokuapp.com/)
+[https://golden-sneaker-oanhhtk.herokuapp.com](https://golden-sneaker-oanhhtk.herokuapp.com)
