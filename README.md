@@ -1,7 +1,6 @@
 # G-Sneaker Assignment
 
-Project follow correctly design from [https://golden-shoe-live-example.herokuapp.com/](https://golden-shoe-live-example.herokuapp.com/)
-[Deploy Heroku](https://golden-sneaker-oanhhtk.herokuapp.com/)
+Project follow correctly design from [https://golden-shoe-live-example.herokuapp.com/](https://golden-shoe-live-example.herokuapp.com/) .\
 
 In the project directory, you can run:
 
