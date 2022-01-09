@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useRef } from "react";
 import removeIcon from "../../assets/trash.png";
 
 CartItem.propTypes = {
@@ -8,10 +8,39 @@ CartItem.propTypes = {
 
 function CartItem(props) {
   const { cartItem, onAddToCart, onRemoveFromCart, onDelete } = props;
+  const cartItemRef = useRef();
+
+  function handleDeleteProduct(cartItem) {
+    // let removed = false;
+    if (onDelete) {
+      cartItemRef.current.style.animation =
+        "myAniRemove cubic-bezier(0.175, 0.885, 0.32, 1) 0.9s forwards";
+      // cartItemRef.current.style.animationFillMode = "forwards";
+      // console.log(cartItemRef.current.style);
+      // onDelete(cartItem);
+
+      setTimeout(() => {
+        onDelete(cartItem);
+      }, 600);
+    }
+  }
+  function handleRemoveProduct(cartItem) {
+    // let removed = false;
+    if (onRemoveFromCart && cartItem.qty === 1) {
+      cartItemRef.current.style.animation =
+        "myAniRemove cubic-bezier(0.175, 0.885, 0.32, 1) 0.9s forwards";
+
+      setTimeout(() => {
+        onRemoveFromCart(cartItem);
+      }, 600);
+    } else {
+      onRemoveFromCart(cartItem);
+    }
+  }
   return (
     <>
       {cartItem.qty > 0 && (
-        <div className="cart-item" key={cartItem.id}>
+        <div className="cart-item" ref={cartItemRef} key={cartItem.id}>
           <div className="cart-item__left">
             <div
               className="cart-item__block"
@@ -29,7 +58,7 @@ function CartItem(props) {
               <div className="cart-item__actions__count">
                 <button
                   className="btn-count-decrease"
-                  onClick={() => onRemoveFromCart(cartItem)}
+                  onClick={() => handleRemoveProduct(cartItem)}
                 >
                   -
                 </button>
@@ -43,7 +72,7 @@ function CartItem(props) {
               </div>
               <div
                 className="cart-item__actions__remove"
-                onClick={() => onDelete(cartItem)}
+                onClick={() => handleDeleteProduct(cartItem)}
               >
                 <img src={removeIcon} alt="" />
               </div>

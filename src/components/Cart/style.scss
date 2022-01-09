@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0.5rem;
+    transition: all 0.5s;
     &__left {
         flex: 1;
     }
@@ -108,11 +109,11 @@
     }
 }
 
-@keyframes myAniToLeft {
+@keyframes myAniRemove {
     from {
-        transform: translatex(200px)
+        transform: scale(1);
     }
     to {
-        transform: translatex(1)
+        transform: scale(0)
     }
 }
